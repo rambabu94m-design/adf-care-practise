@@ -1,0 +1,10 @@
+{
+	"name": "LS_AzureKeyVault2meta",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://keyvaultcarepractise.vault.azure.net/"
+		}
+	}
+}
