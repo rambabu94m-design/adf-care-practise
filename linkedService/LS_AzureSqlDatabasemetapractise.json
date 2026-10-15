@@ -1,0 +1,23 @@
+{
+	"name": "LS_AzureSqlDatabasemetapractise",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "servercarepractise.database.windows.net",
+			"database": "dbcarepractise",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "care",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "LS_AzureKeyVault2meta",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "rambabusecretname"
+			}
+		}
+	}
+}
