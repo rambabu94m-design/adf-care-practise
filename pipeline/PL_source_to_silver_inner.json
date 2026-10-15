@@ -48,7 +48,7 @@
 				}
 			},
 			{
-				"name": "source_landing_injection",
+				"name": "source_to_landing injection",
 				"type": "Copy",
 				"dependsOn": [
 					{
@@ -66,7 +66,7 @@
 				],
 				"policy": {
 					"timeout": "0.12:00:00",
-					"retry": 0,
+					"retry": 2,
 					"retryIntervalInSeconds": 30,
 					"secureOutput": false,
 					"secureInput": false
@@ -125,12 +125,6 @@
 			"table_id": {
 				"type": "string",
 				"defaultValue": "1"
-			},
-			"container": {
-				"type": "string"
-			},
-			"folder": {
-				"type": "string"
 			}
 		},
 		"variables": {
