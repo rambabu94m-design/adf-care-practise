@@ -1,0 +1,23 @@
+{
+	"name": "LS_metadata_23",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "sr-metadata-23.database.windows.net",
+			"database": "db_metadata_23",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "usercare",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "LS_keyvault_23",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "usercare"
+			}
+		}
+	}
+}
