@@ -1,0 +1,20 @@
+{
+	"name": "DS_landing_23",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_landingstorage_23",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "folder23",
+				"fileSystem": "landingcontainer23"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
