@@ -18,7 +18,7 @@
 					"source": {
 						"type": "AzureSqlSource",
 						"sqlReaderQuery": {
-							"value": "select * from ctrl.table_config where is_Active ='true'",
+							"value": "select * from ctrl.table_config where is_Active ='true' and source_system='@{pipeline().parameters.source_system}'",
 							"type": "Expression"
 						},
 						"queryTimeout": "02:00:00",
@@ -32,43 +32,54 @@
 				}
 			},
 			{
-				"name": "for each table inject",
+				"name": "inject all tables",
 				"type": "ForEach",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "To get the  list of tables",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"userProperties": [],
 				"typeProperties": {
+					"items": {
+						"value": "@activity('To get the  list of tables').output.value",
+						"type": "Expression"
+					},
 					"activities": [
 						{
-							"name": "Copy data1",
-							"type": "Copy",
+							"name": "Set variable1",
+							"type": "SetVariable",
 							"dependsOn": [],
 							"policy": {
-								"timeout": "0.12:00:00",
-								"retry": 0,
-								"retryIntervalInSeconds": 30,
 								"secureOutput": false,
 								"secureInput": false
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"source": {
-									"type": "AzureSqlSource",
-									"queryTimeout": "02:00:00",
-									"partitionOption": "None"
-								},
-								"enableStaging": false
-							},
-							"inputs": [
-								{
-									"referenceName": "DS_metadata_23",
-									"type": "DatasetReference"
+								"variableName": "Test",
+								"value": {
+									"value": "@item().table_id",
+									"type": "Expression"
 								}
-							]
+							}
 						}
 					]
 				}
 			}
 		],
+		"parameters": {
+			"source_system": {
+				"type": "string"
+			}
+		},
+		"variables": {
+			"Test": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
