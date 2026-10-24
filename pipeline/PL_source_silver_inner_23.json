@@ -73,8 +73,25 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"source": {
+						"type": "ParquetSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "ParquetReadSettings"
+						}
+					},
 					"enableStaging": false
-				}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_landing_23",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"parameters": {
