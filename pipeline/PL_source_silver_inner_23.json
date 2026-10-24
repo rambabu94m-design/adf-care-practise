@@ -5,8 +5,6 @@
 			{
 				"name": "read table data",
 				"type": "Lookup",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -44,7 +42,7 @@
 				"typeProperties": {
 					"variableName": "start_time",
 					"value": {
-						"value": "@formatDateTime(utcNow(),'YYYY-MM-dd hh:mm:ss')",
+						"value": "@formatDateTime(utcNow(),'yyyy-MM-dd hh:mm:ss')",
 						"type": "Expression"
 					}
 				}
