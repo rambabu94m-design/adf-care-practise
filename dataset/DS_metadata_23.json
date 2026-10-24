@@ -1,0 +1,12 @@
+{
+	"name": "DS_metadata_23",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_metadata_23",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}
