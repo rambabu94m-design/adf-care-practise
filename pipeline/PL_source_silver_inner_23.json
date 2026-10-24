@@ -108,7 +108,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_landing_23",
+						"referenceName": "DS_Parquet_23",
 						"type": "DatasetReference"
 					}
 				]
