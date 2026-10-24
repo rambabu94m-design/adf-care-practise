@@ -1,6 +1,21 @@
 {
-	"name": "test_copy_23",
+	"name": "table list pipeline",
 	"properties": {
+		"activities": [
+			{
+				"name": "To get the  list of tables",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": []
+			}
+		],
 		"annotations": []
 	}
 }
