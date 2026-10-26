@@ -150,6 +150,10 @@
 		"parameters": {
 			"source_system": {
 				"type": "string"
+			},
+			"adf_run_id": {
+				"type": "string",
+				"defaultValue": "a2"
 			}
 		},
 		"variables": {
