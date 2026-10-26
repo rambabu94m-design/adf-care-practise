@@ -135,16 +135,8 @@
 				"typeProperties": {
 					"notebookPath": "/caresync_repo_23/repositary_23/landing_bronze_23",
 					"baseParameters": {
-						"source_system": {
-							"value": "@activity('read table data').output.firstRow.source_system",
-							"type": "Expression"
-						},
-						"table_name": {
+						"folder_name": {
 							"value": "@activity('read table data').output.firstRow.bronze_table_name",
-							"type": "Expression"
-						},
-						"landing_timestamp": {
-							"value": "@variables('start_time')",
 							"type": "Expression"
 						}
 					}
@@ -176,12 +168,8 @@
 				"typeProperties": {
 					"notebookPath": "/caresync_repo_23/repositary_23/bronze_silver_23",
 					"baseParameters": {
-						"table_name": {
+						"folder_name": {
 							"value": "@activity('read table data').output.firstRow.silver_table_name",
-							"type": "Expression"
-						},
-						"landing_timestamp": {
-							"value": "@variables('start_time')",
 							"type": "Expression"
 						}
 					}
